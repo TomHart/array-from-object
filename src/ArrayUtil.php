@@ -2,9 +2,6 @@
 
 namespace TomHart\Utilities;
 
-use _HumbugBox22f0dbe102af\Nette\Utils\Paginator;
-use stdClass;
-
 class ArrayUtil
 {
 
@@ -36,7 +33,7 @@ class ArrayUtil
                 $root = $root->$part;
             }
 
-            if ($last && property_exists($root, $last)) {
+            if ($last && (property_exists($root, $last) || (method_exists($root, '__get') && $root->$last))) {
                 // Get the value.
                 $return[$name] = $root->$last;
                 continue;
