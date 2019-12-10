@@ -13,11 +13,11 @@ class ArrayUtil
      * Given an array of strings, look in the class, or $data for a matching property/key.
      * Can also supply nested properties using ->, e.g. parent->name
      * @param string[] $params
-     * @param stdClass $model
+     * @param mixed $model
      * @param mixed[] $data
      * @return mixed[]
      */
-    public static function populateArrayFromObject(array $params, stdClass $model, array $data = [])
+    public static function populateArrayFromObject(array $params, $model, array $data = [])
     {
 
         $return = [];
